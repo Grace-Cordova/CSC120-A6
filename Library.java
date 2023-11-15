@@ -2,11 +2,13 @@
 import java.util.Enumeration;
 import java.util.Hashtable;
 // Creates library as an extension of building. Initializes the hashtable of books. the key is title and author, the key is a boolean that returns a value for whether or not the book is available.
+
 public class Library extends Building {
+    private Hashtable <String, Boolean> collection;
     public Library(String name, String address, int nFloors) {
     super(name, address, nFloors);
     System.out.println("You have built a library: 📖");
-    Hashtable<String, Boolean>collection = new Hashtable<String, Boolean>();
+    this.collection = new Hashtable<String, Boolean>();
     }
     // Add title method. Takes in the key and value, puts it into the hashtable
   public void addTitle(String title, Boolean available){
@@ -26,20 +28,14 @@ public class Library extends Building {
   }
   // containsTitle method that returns a boolean. Checks if the hashtable contains a book, if not prints a statement, it it does prints a statement.
   public boolean containsTitle(String title){
-    Hashtable.containsKey(this.title);
-    if (containsTitle(title).equals(false)){
-      System.out.println("Sorry, for the inconvenience. "+title+"is not in our system");
-    }else{
-      System.out.println(title+" is in our system.");
-    }
+    collection.containsKey(title);
+    if (true){
+      throw new RuntimeException("Sorry, for the inconvenience. "+title+"is not in our system");
   }
 // isAvailable method returns a boolean and prints a statement if the book is available. Prints a statement if the book is not. 
-public boolean isAvailable(String title){
-  if (collection.contains(title, false)){
-    System.out.println("Sorry, for the inconvenience. "+title+"is not currently available.");
-  }else{
-    System.out.println(title+" is currently available.");
-  }
+public Boolean isAvailable(String title){
+  if (collection.get(title).equals(false));
+    throw new RuntimeException("Sorry, the title is not currently available");
 }
 // print collection uses hashtable enumeration to print each key (title and author).
 public void printCollection(){
@@ -55,3 +51,4 @@ public void printCollection(){
     }
   
   }
+}
