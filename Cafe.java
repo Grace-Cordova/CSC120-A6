@@ -65,13 +65,13 @@ public class Cafe extends Building {
    */
     public void sellCoffee(int size, int nSugarPackets, int nCreams){
         if (size >= this.nCoffeeOunces){
-            throw new RuntimeException("Unfortunately we are out of coffee. Wait a moment while we restock.");
+            System.out.println("Unfortunately we are out of coffee. Wait a moment while we restock.");
             restock(this.nCoffeeOunces, this.nSugarPackets, this.nCreams, this.nCups);
         }else if (nSugarPackets>=this.nSugarPackets){
-            throw new RuntimeException("Unfortunately we are out of sugar. Wait a moment while we restock.");
+            System.out.println("Unfortunately we are out of sugar. Wait a moment while we restock.");
             restock(this.nCoffeeOunces, this.nSugarPackets, this.nCreams, this.nCups);
         }else if (nCreams>=this.nCreams){
-            throw new RuntimeException("Unfortunately we are out of cream. Wait a moment while we restock.");
+            System.out.println("Unfortunately we are out of cream. Wait a moment while we restock.");
             restock(this.nCoffeeOunces, this.nSugarPackets, this.nCreams, this.nCups);
         }
         this.nCoffeeOunces -= size;

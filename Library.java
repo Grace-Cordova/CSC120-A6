@@ -61,8 +61,8 @@ public class Library extends Building {
   public boolean containsTitle(String title){
     collection.containsKey(title);
     if (true){
-      throw new RuntimeException("Sorry, for the inconvenience. "+title+"is not in our system");
-    }
+      System.out.println("It looks like "+title+"is currently in our system");
+    }System.out.println("Sorry, for the inconvenience. "+title+" is not currently in our system.")
   }
     /**
    * isAvailable method returns a boolean and prints a statement if the book is available. Prints a statement if the book is not. 
@@ -71,8 +71,9 @@ public class Library extends Building {
    */
   public boolean isAvailable(String title){
     if (collection.get(title).equals(false)){
-      throw new RuntimeException("Sorry, the title is not currently available");
-    }
+      System.out.println("Sorry, for the inconvenience "+title+" is not currently available");
+    }System.out.println(+title+" is  currently available");
+
   }
    /**
    * print collection uses hashtable enumeration to print each key (title and author).

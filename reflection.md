@@ -7,3 +7,5 @@ I'm still struggling with a lot of syntax issues in my code. This week I spent g
 
 UPDATED REFLECTION:
 I had issues with the way that I initialized most of my variables so I went through and fixed them. I also made sure to add the javadoc comments. I'm still having some issues with trying to run it but on the whole I feel much better about this.
+
+UPDATED UPDATED REFLECTION: I found that when restock is called I threw a runtime exception right before it. This means that restock is never called even when you sell out of something! In library I had a few other runtime exception errors where I entered them when the user asks if a title is available and if a title is in the system. Print lines were much more suited to handling this task because there was no error that occured with the users input. 

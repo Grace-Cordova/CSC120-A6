@@ -40,13 +40,13 @@ _____yes 1 pt: The `Cafe` class uses the `restock(...)` method to avoid running 
 
 ## General Items:
 
-_____no 4 pts: Programs compile without errors or warnings
+_____no(says it can't find main in Building class) 4 pts: Programs compile without errors or warnings
 
-_____no 2 pts: Executes fully & consistently without crashing (exception/freeze)
+_____yes 2 pts: Executes fully & consistently without crashing (exception/freeze)
 
-_____no 2 pt: Complies with style guidelines (missing items 1 pt each):
+_____yes 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      _____no Classes & class members all have Javadoc header comments
+      _____yes Classes & class members all have Javadoc header comments
 
       _____yes Clear and consistent indentation of bracketed sections
 
@@ -54,7 +54,7 @@ _____no 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       _____yes Methods & variables all have clear and accurate names
 
-      _____no Methods avoid confusing side effects
+      _____yes Methods avoid confusing side effects
 
 _____ yes 1 pt: All required files included with submission (including completed `rubric.md` file)
 
