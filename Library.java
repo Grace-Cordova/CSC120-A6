@@ -1,4 +1,4 @@
-/* This is a stub for the Library class */
+
 import java.util.Enumeration;
 import java.util.Hashtable;
 // Creates library as an extension of building. Initializes the hashtable of books. the key is title and author, the key is a boolean that returns a value for whether or not the book is available.
@@ -33,6 +33,9 @@ public class Library extends Building {
    * @return  none
    */
   public void removeTitle(String title, Boolean available){
+    if !collection.containsKey(title){
+      throw new RuntimeException(title+" does not exist in our collection and cannot be removed.");
+    }
     collection.remove(title, available);
   }
     /**
@@ -59,10 +62,9 @@ public class Library extends Building {
    * @return  boolean
    */
   public boolean containsTitle(String title){
-    collection.containsKey(title);
-    if (true){
-      System.out.println("It looks like "+title+"is currently in our system");
-    }System.out.println("Sorry, for the inconvenience. "+title+" is not currently in our system.")
+    if (collection.containsKey(title)){
+      System.out.println("It looks like "+title+" is currently in our system");
+    }System.out.println("Sorry, for the inconvenience. "+title+" is not currently in our system.");
   }
     /**
    * isAvailable method returns a boolean and prints a statement if the book is available. Prints a statement if the book is not. 

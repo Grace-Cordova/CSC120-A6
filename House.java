@@ -42,7 +42,10 @@ public class House extends Building{
    * @param   none
    * @return  none
    */
-  public void moveIn(){
+  public void moveIn(student.name){
+    if this.residents.contains(String student.name){
+      throw new RuntimeException(student.name+" already lives in this house and cannot be moved in.");
+    }
     residents.add(this.name);
   }
     /**
@@ -51,6 +54,9 @@ public class House extends Building{
    * @return  none
    */
   public void moveOut(){
+    if !this.residents.contains(String student.name){
+      throw new RuntimeException(student.name+" does not live in this house and cannot be moved out.");
+    }
     residents.remove(this.name);
   }
     /**
@@ -58,8 +64,8 @@ public class House extends Building{
    * @param   name String
    * @return  boolean
    */
-  public boolean isResident(String name){
-    return this.residents.contains(name);
+  public boolean isResident(String student.name){
+    return this.residents.contains(student.name);
   }
 
 }

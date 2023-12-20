@@ -73,10 +73,14 @@ public class Cafe extends Building {
         }else if (nCreams>=this.nCreams){
             System.out.println("Unfortunately we are out of cream. Wait a moment while we restock.");
             restock(this.nCoffeeOunces, this.nSugarPackets, this.nCreams, this.nCups);
+        }else if (nCups>=1){
+            System.out.println("Unfortunately we are out of cups. Wait a moment while we restock.");
+            restock(this.nCoffeeOunces, this.nSugarPackets, this.nCreams, this.nCups);
         }
         this.nCoffeeOunces -= size;
         this.nSugarPackets -= nSugarPackets;
         this.nCreams -= nCreams;
+        this.nCups -= 1;
     }
 
     // restock method. Takes in nCoffeeOunces, intnSugarPackets, nCreams, nCups, and restocks each so they return to the original inventory level.
