@@ -20,19 +20,17 @@ public class Library extends Building {
     /**
    * Add title method. Takes in the key and value, puts it into the hashtable
    * @param   title String
-   * @param   available boolean
    * @return  none
    */
-  public void addTitle(String title, Boolean available){
+  public void addTitle(String title){
     collection.put(title, available);
   }
     /**
    * Remove title method. Takes in key and value. Removes the book from the hashtable
    * @param   title String
-   * @param   available boolean
    * @return  none
    */
-  public void removeTitle(String title, Boolean available){
+  public void removeTitle(String title){
     if !collection.containsKey(title){
       throw new RuntimeException(title+" does not exist in our collection and cannot be removed.");
     }
@@ -41,27 +39,31 @@ public class Library extends Building {
     /**
    * Check out method. Takes in key and value. Replaces value with false so the book is no longer available.
    * @param   title String
-   * @param   available boolean
    * @return  none
    */
-  public void checkOut(String title, Boolean available){
-    collection.replace(title, available.equals(true), available.equals(false));
+  public void checkOut(String title){
+    if !collection.containsKey(title){
+      throw new RuntimeException(title+" does not exist in our collection and cannot be checked out.");
+    }
+    available.equals(false);
   }
     /**
    * Return method. Takes in key and value. Replaces the value with true so that the book is available. 
    * @param   title String
-   * @param   available boolean
    * @return  none
    */
-  public void returnBook(String title, Boolean available){
-    collection.replace(title, available.equals(false), available.equals(true));
-  }
+  public void returnBook(String title){
+    if collection.containsKey(title){
+      throw new RuntimeException(title+" does not exist in our collection and cannot be returned.");
+    }
+    available.equals(true);
+    }
     /**
    * containsTitle method that returns a boolean. Checks if the hashtable contains a book, if not prints a statement, it it does prints a statement.
    * @param   title String
    * @return  boolean
    */
-  public boolean containsTitle(String title){
+  public void containsTitle(String title){
     if (collection.containsKey(title)){
       System.out.println("It looks like "+title+" is currently in our system");
     }System.out.println("Sorry, for the inconvenience. "+title+" is not currently in our system.");
